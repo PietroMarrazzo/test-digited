@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { isForwardDisabled } from "../../assertions/navigationBtnDisabled";
 import type { IQuizActive } from "../../types/IQuizActive";
 import type { IQuiz } from "../../types/IQuizPromise";
@@ -26,6 +26,7 @@ export const QuestionUI = ({
     questionActive < 2 ? "Prossima" : "Termina quiz!";
 
   function clickForward() {
+    // if this was last question (index #2), save it and endQuiz saving answers into zustand store
     if (questionActive === 2) {
       console.log("questionActive", questionActive);
       setAnswers(selectedAnswers);
