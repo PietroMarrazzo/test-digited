@@ -1,0 +1,98 @@
+import type { IQuizPromise } from "../types/IQuizPromise";
+
+export const questionsMock: IQuizPromise = [
+  {
+    quiz: "Quale classe può lanciare incantesimi e indossare armature pesanti?",
+    type: "enum",
+    options: [
+      { label: "Stregone", value: "a1f2c", isCorrect: false },
+      { label: "Paladino", value: "b3d4e", isCorrect: true },
+      { label: "Monaco", value: "c5g6h", isCorrect: false },
+    ],
+  },
+  {
+    quiz: "Quale delle seguenti creature è un non morto?",
+    type: "enum",
+    options: [
+      { label: "Beholder", value: "d1z2x", isCorrect: false },
+      { label: "Lich", value: "e3c4v", isCorrect: true },
+      { label: "Gnoll", value: "f5n6m", isCorrect: false },
+    ],
+  },
+  {
+    quiz: "Quale di questi incantesimi è di livello 1?",
+    type: "enum",
+    options: [
+      { label: "Palla di fuoco", value: "g7h8j", isCorrect: false },
+      { label: "Scudo", value: "i9k0l", isCorrect: true },
+      { label: "Sciame di meteore", value: "m1n2o", isCorrect: false },
+    ],
+  },
+  {
+    quiz: "Quale classe ha come caratteristica principale la Saggezza?",
+    type: "enum",
+    options: [
+      { label: "Chierico", value: "p3q4r", isCorrect: true },
+      { label: "Bardo", value: "s5t6u", isCorrect: false },
+      { label: "Guerriero", value: "v7w8x", isCorrect: false },
+    ],
+  },
+  {
+    quiz: "Quale piano d'esistenza è associato alla Legge e all'Ordine?",
+    type: "enum",
+    options: [
+      { label: "Mechanus", value: "y9z0a", isCorrect: true },
+      { label: "Pandemonium", value: "b2c3d", isCorrect: false },
+      { label: "Limbo", value: "e4f5g", isCorrect: false },
+    ],
+  },
+  {
+    quiz: "Quali tra questi sono strumenti musicali utilizzabili da un bardo?",
+    type: "multienum",
+    options: [
+      { label: "Liuto", value: "h6i7j", isCorrect: true },
+      { label: "Tamburo", value: "k8l9m", isCorrect: true },
+      { label: "Martello da guerra", value: "n0o1p", isCorrect: false },
+    ],
+  },
+  {
+    quiz: "Quali di questi incantesimi possono essere lanciati come reazione?",
+    type: "multienum",
+    options: [
+      { label: "Scudo", value: "q2r3s", isCorrect: true },
+      { label: "Controincantesimo", value: "t4u5v", isCorrect: true },
+      { label: "Evoca Mostri", value: "w6x7y", isCorrect: false },
+    ],
+  },
+  {
+    quiz: "Quali di queste razze hanno scurovisione?",
+    type: "multienum",
+    options: [
+      { label: "Nano", value: "z8a9b", isCorrect: true },
+      { label: "Elfo", value: "c0d1e", isCorrect: true },
+      { label: "Drow", value: "f2g3h", isCorrect: true },
+    ],
+  },
+  {
+    quiz: "Quali oggetti magici sono considerati leggendari?",
+    type: "multienum",
+    options: [
+      { label: "Spada Vorpal", value: "i4j5k", isCorrect: true },
+      {
+        label: "Pozione di guarigione",
+        value: "l6m7n",
+        isCorrect: false,
+      },
+      { label: "Arpa di Ollamh", value: "o8p9q", isCorrect: true },
+    ],
+  },
+  {
+    quiz: "Quali delle seguenti abilità sono basate su Destrezza?",
+    type: "multienum",
+    options: [
+      { label: "Intimidazione", value: "x4y5z", isCorrect: false },
+      { label: "Furtività", value: "r0s1t", isCorrect: true },
+      { label: "Atletica", value: "u2v3w", isCorrect: false },
+    ],
+  },
+];
