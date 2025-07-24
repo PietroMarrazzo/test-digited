@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { IStatusQuiz } from "../types/IStatusQuiz";
 import { STATUS_QUIZ } from "../costants/StatusQuiz";
 import { WelcomePage } from "../components/WelcomeMaster/WelcomePage";
@@ -11,13 +11,16 @@ export const useNavigateApp = () => {
     console.log("newStatus", newStatus);
     setStatus(newStatus);
   }
+  function handleEndQuiz(newStatus: IStatusQuiz) {
+    setStatus(newStatus);
+  }
 
   switch (status) {
     case STATUS_QUIZ.WELCOME:
       return <WelcomePage onClickStart={changeStatus} />;
     case STATUS_QUIZ.QUIZ:
-      return <QuizPage onClickEndQuiz={changeStatus} />;
+      return <QuizPage handleEndQuiz={handleEndQuiz} />;
     case STATUS_QUIZ.RESULT:
-      return <>RISULTATI!</>;
+      return <Results />;
   }
 };
