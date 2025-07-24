@@ -7,7 +7,7 @@ type IWelcomePage = {
 
 export const WelcomePage = ({ onClickStart }: IWelcomePage) => {
   return (
-    <div>
+    <div id="welcomeContainer" className="h-full">
       <h1>Welcome to DnD quiz!</h1>
       <p>Spero tu abbia studiato bene...</p>
       <button onClick={() => onClickStart(STATUS_QUIZ.QUIZ)}>INIZIAMO!</button>
