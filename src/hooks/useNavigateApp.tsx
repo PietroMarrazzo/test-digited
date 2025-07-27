@@ -9,10 +9,6 @@ export const useNavigateApp = () => {
   const [status, setStatus] = useState<IStatusQuiz>(STATUS_QUIZ.WELCOME);
 
   function changeStatus(newStatus: IStatusQuiz) {
-    console.log("newStatus", newStatus);
-    setStatus(newStatus);
-  }
-  function handleEndQuiz(newStatus: IStatusQuiz) {
     setStatus(newStatus);
   }
 
@@ -20,8 +16,8 @@ export const useNavigateApp = () => {
     case STATUS_QUIZ.WELCOME:
       return <WelcomePage onClickStart={changeStatus} />;
     case STATUS_QUIZ.QUIZ:
-      return <QuizPage handleEndQuiz={handleEndQuiz} />;
+      return <QuizPage handleEndQuiz={changeStatus} />;
     case STATUS_QUIZ.RESULT:
-      return <ResultsPage />;
+      return <ResultsPage onClickRestart={changeStatus} />;
   }
 };

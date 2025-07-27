@@ -7,7 +7,9 @@
 .checkbox-wrapper {
   box-sizing: border-box;
   --background-color: #fff;
-  --checkbox-height: 25px;
+  --checkbox-height: 26px;
+  display: flex;
+  align-items: center;
 }
 
 @-moz-keyframes dothabottomcheck {

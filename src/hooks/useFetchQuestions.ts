@@ -18,10 +18,6 @@ export const useFetchQuestions = () => {
     staleTime: Infinity,
   });
 
-  // const dataRandomized = (data ?? [])
-  //   .sort(() => 0.5 - Math.random())
-  //   .slice(0, 3);
-
   return {
     questionList: data,
     isPending,
