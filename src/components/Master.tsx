@@ -8,7 +8,7 @@ export const Master = () => {
     <div
       id="bodyContainer"
       // sm:width is handled by media query in app.css
-      className="flex flex-col place-self-center place-content-center min-h-full sm:min-h-[650px] max-h-full w-full border lg:rounded-2xl border-indigo-500 sm:p-5 py-0 px-5 bg-indigo-900 "
+      className="flex flex-col place-self-center place-content-center min-h-full sm:min-h-[700px] max-h-full w-full border lg:rounded-2xl border-indigo-500 sm:p-5 py-0 px-5 bg-indigo-900 "
     >
       {component}
     </div>

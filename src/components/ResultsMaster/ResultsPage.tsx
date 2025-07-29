@@ -36,23 +36,23 @@ export const ResultsPage = ({ onClickRestart }: IResultsPage) => {
 
       <Grid
         container
-        columnSpacing={2}
+        columnSpacing={1}
         className="flex space-x-0 justify-between my-8"
       >
         <ResultCard
-          upperLable="Hai fornito"
+          upperLable="Corrette"
           middleLable={`${correctAnswers}`}
-          lowerLable="risposte corrette"
+          // lowerLable="risposte corrette"
         />
         <ResultCard
           upperLable="Precisione"
           middleLable={`${percentage()}%`}
-          // lowerLable="delle risposte"
+          // lowerLable="risposte corrette"
         />
         <ResultCard
-          upperLable="Hai sbagliato"
+          upperLable="Sbagliate"
           middleLable={`${wrongAnswers}`}
-          lowerLable={`${checkLowerLableTypo()}`}
+          // lowerLable={`${checkLowerLableTypo()}`}
         />
       </Grid>
       <div>
