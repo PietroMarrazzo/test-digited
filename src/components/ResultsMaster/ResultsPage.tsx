@@ -25,11 +25,6 @@ export const ResultsPage = ({ onClickRestart }: IResultsPage) => {
     return Math.trunc((100 * correctAnswers) / 3).toString();
   }
 
-  function checkLowerLableTypo() {
-    if (wrongAnswers === 1) return "domanda";
-    return "domande";
-  }
-
   return (
     <div className="flex flex-col h-full">
       <BigHeader title={isPassed(correctAnswers)} />
