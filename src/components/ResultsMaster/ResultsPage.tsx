@@ -34,21 +34,9 @@ export const ResultsPage = ({ onClickRestart }: IResultsPage) => {
         columnSpacing={1}
         className="flex space-x-0 justify-between my-8"
       >
-        <ResultCard
-          upperLable="Corrette"
-          middleLable={`${correctAnswers}`}
-          // lowerLable="risposte corrette"
-        />
-        <ResultCard
-          upperLable="Precisione"
-          middleLable={`${percentage()}%`}
-          // lowerLable="risposte corrette"
-        />
-        <ResultCard
-          upperLable="Sbagliate"
-          middleLable={`${wrongAnswers}`}
-          // lowerLable={`${checkLowerLableTypo()}`}
-        />
+        <ResultCard upperLable="Corrette" middleLable={`${correctAnswers}`} />
+        <ResultCard upperLable="Precisione" middleLable={`${percentage()}%`} />
+        <ResultCard upperLable="Sbagliate" middleLable={`${wrongAnswers}`} />
       </Grid>
       <div>
         <NerdyButton
