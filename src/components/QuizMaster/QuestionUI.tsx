@@ -27,7 +27,7 @@ export const QuestionUI = ({
 }: IQuestionUI) => {
   const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
 
-  const { setAnswers, addCorretAnswer } = useStoreAnswers();
+  const { setAnswers } = useStoreAnswers();
 
   // filter only correct options of the question and sort them by the string value *** i choose sort() cause it makes simplier to check both arrays, but should not be the case in situations where options are a larger number
   const correctAnswerValues = quizData.options
@@ -44,9 +44,6 @@ export const QuestionUI = ({
       correctAnswerValues,
       selectedAnswers
     );
-    if (isQuestionCorrect) {
-      addCorretAnswer();
-    }
     setAnswers(isQuestionCorrect, questionActive.toString());
   }
 

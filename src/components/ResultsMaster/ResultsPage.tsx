@@ -6,36 +6,53 @@ import { ResultCard } from "../QuizMaster/AnswerInput/ResultCard";
 import { NerdyButton } from "../Shared/NerdyButton";
 import { STATUS_QUIZ } from "../../costants/StatusQuiz";
 import type { IStatusQuiz } from "../../types/IStatusQuiz";
+import {
+  checkCorrectAnswers,
+  checkWrongAnswers,
+} from "../../utils/checkAnswersForResults";
 
 type IResultsPage = {
   onClickRestart: (newStatus: IStatusQuiz) => void;
 };
 
 export const ResultsPage = ({ onClickRestart }: IResultsPage) => {
-  const { correctAnswer } = useStoreAnswers();
+  const { answers } = useStoreAnswers();
+
+  const correctAnswers = checkCorrectAnswers(answers);
+  const wrongAnswers = checkWrongAnswers(answers);
 
   function percentage() {
-    return Math.trunc((100 * correctAnswer) / 3).toString();
+    return Math.trunc((100 * correctAnswers) / 3).toString();
+  }
+
+  function checkLowerLableTypo() {
+    if (wrongAnswers === 1) return "domanda";
+    return "domande";
   }
 
   return (
     <div className="flex flex-col h-full">
-      <BigHeader title={isPassed(correctAnswer)} />
+      <BigHeader title={isPassed(correctAnswers)} />
 
       <Grid
         container
-        columnSpacing={4}
+        columnSpacing={2}
         className="flex space-x-0 justify-between my-8"
       >
         <ResultCard
+          upperLable="Hai fornito"
+          middleLable={`${correctAnswers}`}
+          lowerLable="risposte corrette"
+        />
+        <ResultCard
           upperLable="Precisione"
           middleLable={`${percentage()}%`}
-          lowerLable="delle risposte"
+          // lowerLable="delle risposte"
         />
         <ResultCard
           upperLable="Hai sbagliato"
-          middleLable={`${3 - correctAnswer}`}
-          lowerLable="su 3 domande"
+          middleLable={`${wrongAnswers}`}
+          lowerLable={`${checkLowerLableTypo()}`}
         />
       </Grid>
       <div>
